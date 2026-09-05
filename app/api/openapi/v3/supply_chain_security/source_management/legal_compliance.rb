@@ -96,7 +96,7 @@ module Openapi
             post :compliance_copyright_anti_tamper do
               fields = %w[
                 compliance_copyright_statement_anti_tamper
-                compliance_copyright_statement_anti_tamper_detail
+                compliance_copyright_anti_tamper_detail
 
               ]
               fetch_metric_data_v2(LegalComplianceMetric, fields)
@@ -129,7 +129,7 @@ module Openapi
                 compliance_license_compatibility_detail
                 license_compatibility_conflicts
                 compliance_copyright_statement_anti_tamper
-                compliance_copyright_statement_anti_tamper_detail
+                compliance_copyright_anti_tamper_detail
                 score
               ]
               fetch_metric_data_v2(LegalComplianceMetric, fields)

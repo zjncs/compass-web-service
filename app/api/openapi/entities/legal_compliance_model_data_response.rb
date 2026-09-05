@@ -13,7 +13,7 @@ module Openapi
       expose :compliance_license_compatibility_detail, documentation: { type: 'String', desc: 'Compliance license compatibility detail / 许可证兼容性详情', nullable: true }
       expose :license_compatibility_conflicts, documentation: { type: 'String', desc: 'License compatibility conflicts / 许可证兼容性冲突', nullable: true }
       expose :compliance_copyright_statement_anti_tamper, documentation: { type: 'String', desc: 'Compliance copyright statement anti tamper / 许可证与版权声明防篡改', nullable: true }
-      expose :compliance_copyright_statement_anti_tamper_detail, documentation: { type: 'String', desc: 'Compliance copyright statement anti tamper detail / 许可证与版权声明防篡改详情', nullable: true }
+      expose :compliance_copyright_anti_tamper_detail, documentation: { type: 'String', desc: 'Compliance copyright anti tamper detail / 许可证与版权声明防篡改详情', nullable: true }
       expose :score, documentation: { type: 'Float', desc: 'Score / 得分', nullable: true }
       expose :grimoire_creation_date, documentation: { type: 'String', desc: 'grimoire_creation_date' }
       expose :metadata__enriched_on, documentation: { type: 'String', desc: 'metadata__enriched_on' }

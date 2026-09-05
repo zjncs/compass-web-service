@@ -19,7 +19,7 @@ module Openapi
                example: -1
              }
 
-      expose :compliance_copyright_statement_anti_tamper_detail,
+      expose :compliance_copyright_anti_tamper_detail,
              documentation: {
                type: 'String',
                desc: 'Anti-tamper detail (JSON string) / 防篡改详情（JSON字符串）',
