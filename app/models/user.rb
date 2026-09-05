@@ -277,6 +277,6 @@ class User < ApplicationRecord
   end
 
   def expire_cache
-    CompassRiak.delete('users', "user_#{self.id}")
+    CompassRiak.delete('users', "user_#{self.id}") if Rails.env.production?
   end
 end
