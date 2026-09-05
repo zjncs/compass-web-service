@@ -174,10 +174,10 @@ GEM
     crono (2.0.1)
       rails (>= 5.2.8)
       sprockets-rails
-    database_cleaner-active_record (2.0.1)
+    database_cleaner-active_record (2.2.2)
       activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
+      database_cleaner-core (~> 2.0)
+    database_cleaner-core (2.1.0)
     date (3.5.1)
     debug (1.10.0)
       irb (~> 1.10)
