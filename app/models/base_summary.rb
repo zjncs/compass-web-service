@@ -15,8 +15,12 @@ class BaseSummary < BaseIndex
   end
 
   def self.aggs_by_date(begin_date, end_date, aggs)
+    # aggs must be part of the key: the summary chart queries aggregate the
+    # same summary index with date histograms whose interval follows the
+    # caller's interval argument, and one cached response must never be
+    # served for another
     Rails.cache.fetch(
-      "#{self.name}-#{__method__}-#{begin_date}-#{end_date}",
+      "#{self.name}-#{__method__}-#{begin_date}-#{end_date}-#{Digest::MD5.hexdigest(aggs.to_json)}",
       expires_in: CacheTTL
     ) do
     self
