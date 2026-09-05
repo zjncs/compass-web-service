@@ -49,8 +49,11 @@ class BaseMetric < BaseIndex
   end
 
   def self.aggs_repo_by_date(repo_url, begin_date, end_date, aggs, type: nil)
+    # aggs must be part of the key: several endpoints aggregate the same
+    # metric/repo/window with different aggregations (e.g. avg_score vs a
+    # date_histogram), and one cached response must never be served for another
     Rails.cache.fetch(
-      "#{self.name}:#{__method__}:#{repo_url}:#{begin_date}:#{end_date}:#{type}",
+      "#{self.name}:#{__method__}:#{repo_url}:#{begin_date}:#{end_date}:#{type}:#{Digest::MD5.hexdigest(aggs.to_json)}",
       expires_in: CacheTTL
     ) do
       self

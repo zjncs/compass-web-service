@@ -79,8 +79,9 @@ class GroupActivityMetric < BaseMetric
   end
 
   def self.aggs_repo_by_date(repo_url, begin_date, end_date, aggs, type: nil)
+    # aggs and type are part of the query, so they belong in the cache key too
     Rails.cache.fetch(
-      "#{self.name}:#{__method__}:#{repo_url}:#{begin_date}:#{end_date}",
+      "#{self.name}:#{__method__}:#{repo_url}:#{begin_date}:#{end_date}:#{type}:#{Digest::MD5.hexdigest(aggs.to_json)}",
       expires_in: CacheTTL
     ) do
       self
