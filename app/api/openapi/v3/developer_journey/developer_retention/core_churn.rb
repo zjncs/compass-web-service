@@ -105,7 +105,7 @@ module Openapi
                  success: { code: 201, model: Openapi::Entities::CoreChurnModelDataResponse }
             params { use :metric_search }
             post :model_data do
-              fields = %w[org_code_core_churn_rate org_issue_core_churn_rate individual_code_core_churn_rate individual_issue_core_churn_rate score]
+              fields = %w[org_code_core_churn org_issue_core_churn individual_code_core_churn individual_issue_core_churn score]
               fetch_metric_data_v2(CoreChurnMetric, fields)
             end
           end

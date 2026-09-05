@@ -105,7 +105,7 @@ module Openapi
                  success: { code: 201, model: Openapi::Entities::CoreRetentionModelDataResponse }
             params { use :metric_search }
             post :model_data do
-              fields = %w[org_code_core_retention_rate org_issue_core_retention_rate individual_code_core_retention_rate individual_issue_core_retention_rate score]
+              fields = %w[org_code_core_retention org_issue_core_retention individual_code_core_retention individual_issue_core_retention score]
               fetch_metric_data_v2(CoreRetentionMetric, fields)
             end
           end

@@ -105,7 +105,7 @@ module Openapi
                  success: { code: 201, model: Openapi::Entities::CoreLossModelDataResponse }
             params { use :metric_search }
             post :model_data do
-              fields = %w[org_code_core_loss_count org_issue_core_loss_count individual_code_core_loss_count individual_issue_core_loss_count score]
+              fields = %w[org_code_core_loss org_issue_core_loss individual_code_core_loss individual_issue_core_loss score]
               fetch_metric_data_v2(CoreLossMetric, fields)
             end
           end

@@ -6,10 +6,10 @@ module Openapi
       expose :uuid, documentation: { type: 'String', desc: 'uuid' }
       expose :level, documentation: { type: 'String', desc: 'level', example: 'repo' }
       expose :label, documentation: { type: 'String', desc: 'label' }
-      expose :org_code_core_loss_count, documentation: { type: 'Integer', desc: 'Org code core loss count / 组织代码核心开发者（含管理者）流失数量', nullable: true }
-      expose :org_issue_core_loss_count, documentation: { type: 'Integer', desc: 'Org issue core loss count / 组织Issue核心开发者（含管理者）流失数量', nullable: true }
-      expose :individual_code_core_loss_count, documentation: { type: 'Integer', desc: 'Individual code core loss count / 个人代码核心开发者（含管理者）流失数量', nullable: true }
-      expose :individual_issue_core_loss_count, documentation: { type: 'Integer', desc: 'Individual issue core loss count / 个人Issue核心开发者（含管理者）流失数量', nullable: true }
+      expose :org_code_core_loss, documentation: { type: 'Integer', desc: 'Org code core loss count / 组织代码核心开发者（含管理者）流失数量', nullable: true }
+      expose :org_issue_core_loss, documentation: { type: 'Integer', desc: 'Org issue core loss count / 组织Issue核心开发者（含管理者）流失数量', nullable: true }
+      expose :individual_code_core_loss, documentation: { type: 'Integer', desc: 'Individual code core loss count / 个人代码核心开发者（含管理者）流失数量', nullable: true }
+      expose :individual_issue_core_loss, documentation: { type: 'Integer', desc: 'Individual issue core loss count / 个人Issue核心开发者（含管理者）流失数量', nullable: true }
       expose :score, documentation: { type: 'Float', desc: 'Score / 得分', nullable: true }
       expose :grimoire_creation_date, documentation: { type: 'String', desc: 'grimoire_creation_date' }
       expose :metadata__enriched_on, documentation: { type: 'String', desc: 'metadata__enriched_on' }
