@@ -7,7 +7,11 @@ module ContributorEnrich
 
   class_methods do
     def fetch_contributors_list(repo_urls, begin_date, end_date, label: nil, level: nil)
-      Rails.cache.fetch(contributors_key(repo_urls, begin_date, end_date), expires_in: 15.minutes) do
+      # label and level must be part of the key: they steer the organization
+      # attribution in load_organizations below, and the same repos are also
+      # queried under other labels/levels (e.g. a community page filtered down
+      # to one repo vs that repo's own page)
+      Rails.cache.fetch(contributors_key(repo_urls, begin_date, end_date, label, level), expires_in: 15.minutes) do
         contribution_count = 0
         acc_contribution_count = 0
         mileage_step = 0
@@ -57,10 +61,10 @@ module ContributorEnrich
       end
     end
 
-    def contributors_key(repo_urls, begin_date, end_date)
+    def contributors_key(repo_urls, begin_date, end_date, label = nil, level = nil)
       repos_string = repo_urls.sort.join(',')
       repos_hash = Digest::MD5.hexdigest(repos_string)
-      "contributors:#{repos_hash}:#{begin_date}:#{end_date}"
+      "contributors:#{repos_hash}:#{begin_date}:#{end_date}:#{label}:#{level}"
     end
 
     def append_filtered_contribution(row, filter_opt)
