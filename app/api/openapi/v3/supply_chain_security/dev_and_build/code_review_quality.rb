@@ -47,6 +47,7 @@ module Openapi
               fields = %w[
                 dependency_reachable_ok
                 dependency_unreachable_list
+                dependency_reachable_detail
                 detail
               ]
               fetch_metric_data_v2(CodeReviewQualityMetric, fields)
@@ -129,6 +130,7 @@ module Openapi
               fields = %w[
                 dependency_reachable_ok
                 dependency_unreachable_list
+                dependency_reachable_detail
                 detail
                 compliance_snippet_reference
                 compliance_snippet_reference_detail

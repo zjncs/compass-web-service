@@ -8,7 +8,8 @@ module Openapi
       expose :label, documentation: { type: 'String', desc: 'label' }
       expose :dependency_reachable_ok, documentation: { type: 'Boolean', desc: 'Dependency reachable ok / 依赖可获得状态', nullable: true }
       expose :dependency_unreachable_list, documentation: { type: 'String', desc: 'Dependency unreachable list / 不可获得的依赖列表', nullable: true }
-      expose :detail, documentation: { type: 'String', desc: 'Detail / 详细信息', nullable: true }
+      expose :dependency_reachable_detail, documentation: { type: 'String', desc: 'Dependency reachable detail / 依赖可获得详情', nullable: true }
+      expose :detail, documentation: { type: 'String', desc: 'Detail / 详细信息（无 dependency-reachable-checker 数据时的提示）', nullable: true }
       expose :compliance_snippet_reference, documentation: { type: 'String', desc: 'Compliance snippet reference / 片段引用合规性', nullable: true }
       expose :compliance_snippet_reference_detail, documentation: { type: 'String', desc: 'Compliance snippet reference detail / 片段引用合规性详情', nullable: true }
       expose :violation_count, documentation: { type: 'Integer', desc: 'Violation count / 违规数量', nullable: true }

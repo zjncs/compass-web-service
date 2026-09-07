@@ -28,11 +28,20 @@ module Openapi
                example: []
              }
 
+      expose :dependency_reachable_detail,
+             documentation: {
+               type: 'String',
+               desc: 'Dependency reachable detail / 依赖可获得详情（不可达数量与样例）',
+               example: '{"unreachable_count":2,"sample":["example/unreachable-dep"]}',
+               nullable: true
+             }
+
       expose :detail,
              documentation: {
                type: 'String',
-               desc: 'Detail message / 详情信息',
-               example: 'no dependency-reachable-checker data'
+               desc: 'Detail message / 详情信息（无 dependency-reachable-checker 数据时的提示）',
+               example: 'no dependency-reachable-checker data',
+               nullable: true
              }
     end
 
