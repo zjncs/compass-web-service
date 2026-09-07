@@ -126,6 +126,10 @@ module Openapi
         label, level, begin_date, end_date, page, size = extract_search_params!(params)
         repo_urls = [label]
         filter_opts = []
+        # Like extract_search_model_params!: documents of every period
+        # (month/quarter/year) for a label live in the same index, so the
+        # requested period has to become a query filter.
+        filter_opts << OpenStruct.new(type: 'period', values: [params[:period]]) if params[:period].present?
 
         base_fields = %w[uuid level type label model_name period grimoire_creation_date]
 
