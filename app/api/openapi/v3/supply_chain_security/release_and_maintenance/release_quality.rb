@@ -44,7 +44,7 @@ module Openapi
                  success: { code: 201, model: Openapi::Entities::SbomInReleaseResponse }
             params { use :metric_search }
             post :sbom_in_release do
-              fields = %w[sbom_in_release detail]
+              fields = %w[sbom_in_release sbom_detail detail]
               fetch_metric_data_v2(ReleaseQualityMetric, fields)
             end
 
@@ -117,6 +117,7 @@ module Openapi
             post :model_data do
               fields = %w[
                 sbom_in_release
+                sbom_detail
                 detail
                 security_binary_artifact
                 security_binary_artifact_detail

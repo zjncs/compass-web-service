@@ -7,7 +7,8 @@ module Openapi
       expose :level, documentation: { type: 'String', desc: 'level', example: 'repo' }
       expose :label, documentation: { type: 'String', desc: 'label' }
       expose :sbom_in_release, documentation: { type: 'Boolean', desc: 'SBOM in release / SBOM检查', nullable: true }
-      expose :detail, documentation: { type: 'String', desc: 'Detail / 详细信息', nullable: true }
+      expose :sbom_detail, documentation: { type: 'String', desc: 'SBOM detail / SBOM检查详情（发布资产内容）', nullable: true }
+      expose :detail, documentation: { type: 'String', desc: 'Detail / 详细信息（无 release-checker 数据时的提示）', nullable: true }
       expose :security_binary_artifact, documentation: { type: 'String', desc: 'Security binary artifact / 二进制制品包含', nullable: true }
       expose :security_binary_artifact_detail, documentation: { type: 'String', desc: 'Security binary artifact detail / 二进制制品包含详情', nullable: true }
       expose :binary_violation_files, documentation: { type: 'String', desc: 'Binary violation files / 二进制违规文件', nullable: true }

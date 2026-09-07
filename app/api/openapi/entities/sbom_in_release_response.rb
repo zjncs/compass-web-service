@@ -20,11 +20,20 @@ module Openapi
                nullable: true
              }
 
+      expose :sbom_detail,
+             documentation: {
+               type: 'String',
+               desc: 'SBOM detail / SBOM检查详情（发布资产内容）',
+               example: '[{"release":"v1.0.0","content_files":["sbom.cdx.json"]}]',
+               nullable: true
+             }
+
       expose :detail,
              documentation: {
                type: 'String',
-               desc: 'Detail message / 详情信息',
-               example: 'no release-checker data'
+               desc: 'Detail message / 详情信息（无 release-checker 数据时的提示）',
+               example: 'no release-checker data',
+               nullable: true
              }
     end
 
